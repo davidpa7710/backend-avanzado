@@ -1,7 +1,12 @@
 const mongoose = require('mongoose')
 
-mongoose.connect('mongodb://localhost/test')
+require('dotenv').config({})
+
+mongoose.connect(
+    process.env.DB_PASSWORD
+)
 
 module.exports = {
     mongoose
 }
+
