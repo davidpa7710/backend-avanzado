@@ -1,4 +1,5 @@
 import express from 'express';
+import { authorRoutes,  authRoutes } from './routes/index.js';
 
 const api = express();
 
@@ -10,5 +11,8 @@ api.get('/', (_, res) => {
     msg: 'API funcionando',
   });
 });
+
+api.use(authorRoutes);
+api.use(authRoutes);
 
 export default api;
